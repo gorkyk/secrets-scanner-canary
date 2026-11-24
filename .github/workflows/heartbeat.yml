@@ -6,8 +6,10 @@ name: canary-heartbeat
 # (canary_detected_total metric) independent of organic secret findings.
 
 on:
-  schedule:
-    - cron: "7 * * * *"
+  # Schedule paused 2026-11-24: secrets-scanner is not running, so the
+  # heartbeat has nothing to verify. To resume, restore:
+  #   schedule:
+  #     - cron: "7 * * * *"
   workflow_dispatch: {}
 
 permissions:
